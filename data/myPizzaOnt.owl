@@ -1,0 +1,660 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http:/www.city.ac.uk/ds/inm713/judith_grieves#"
+     xml:base="http:/www.city.ac.uk/ds/inm713/judith_grieves"
+     xmlns:jkg="http:/www.city.ac.uk/ds/inm713/judith_grieves#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves">
+        <owl:versionIRI rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves/0.1"/>
+        <rdfs:comment>author: Judith Grieves
+
+MSc Data Science - INM713 - Semantic Web Technology &amp; Knowledge Graphs
+
+Ontology created as part of the module coursework, to hold data from Kaggle pizza restaurant dataset:
+https://www.kaggle.com/datafiniti/pizza-restaurants-and-the-pizza-they-sell</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#creator -->
+
+    <owl:AnnotationProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#creator">
+        <rdfs:comment xml:lang="en">created by Judith Grieves
+judith.grieves</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#isDefinedBy"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#addressLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#addressLocatedIn">
+        <rdfs:subPropertyOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#locatedIn"/>
+        <owl:inverseOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#cityContainsLocation"/>
+        <rdfs:domain rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#PostalAddress"/>
+        <rdfs:range rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#City"/>
+        <rdfs:label>address located in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#cityContainsLocation -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#cityContainsLocation">
+        <rdfs:subPropertyOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#containsLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#cityLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#cityLocatedIn">
+        <rdfs:subPropertyOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#locatedIn"/>
+        <owl:inverseOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#stateContainsLocation"/>
+        <rdfs:label>city located in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#containsLocation -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#containsLocation">
+        <owl:inverseOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#locatedIn"/>
+        <rdfs:comment>A larger geographical area can contain many smaller areas.</rdfs:comment>
+        <rdfs:label>contains location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#countryContainsLocation -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#countryContainsLocation">
+        <rdfs:subPropertyOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#containsLocation"/>
+        <owl:inverseOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#stateLocatedIn"/>
+        <rdfs:domain rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Country"/>
+        <rdfs:range rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#State"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#hasCategory -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#hasCategory">
+        <owl:inverseOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#hasOutlet"/>
+        <rdfs:domain rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaOutlet"/>
+        <rdfs:range rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#OutletCategory"/>
+        <rdfs:comment>A pizza outlet has one or more categories, eg. restaurant, bakery.</rdfs:comment>
+        <rdfs:label>has category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#hasFoodCategory -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#hasFoodCategory">
+        <owl:inverseOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#isAvailableAs"/>
+        <rdfs:domain rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#MenuItem"/>
+        <rdfs:range rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Pizza"/>
+        <rdfs:comment>a menu item available at an outlet belongs to a particular food category, eg. pizza, pasta.</rdfs:comment>
+        <rdfs:label>has food category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#hasIngredient">
+        <owl:inverseOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#isIngredientOf"/>
+        <rdfs:domain rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#MenuItem"/>
+        <rdfs:range rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Ingredient"/>
+        <rdfs:comment>relationship to define one or many ingredients used in the creation of a pizza.</rdfs:comment>
+        <rdfs:label>has ingredient</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#hasMenuItem -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#hasMenuItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#servedAt"/>
+        <rdfs:domain rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaOutlet"/>
+        <rdfs:range rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#MenuItem"/>
+        <rdfs:comment>has a food menu item for sale</rdfs:comment>
+        <rdfs:label>has menu item</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#hasOutlet -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#hasOutlet">
+        <rdfs:comment>A category of pizza outlet has a number of outlets with that category.</rdfs:comment>
+        <rdfs:label>has outlet</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#hasOutletPremises -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#hasOutletPremises">
+        <owl:inverseOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#isLocatedAt"/>
+        <rdfs:comment>A postal address has one or more business located at it.</rdfs:comment>
+        <rdfs:label>has outlet premises</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#hasPizzaBase -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#hasPizzaBase">
+        <owl:inverseOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#isBaseOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#hasPizzaTopping -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#hasPizzaTopping">
+        <rdfs:subPropertyOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#hasIngredient"/>
+        <owl:inverseOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#isToppingOf"/>
+        <rdfs:domain rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Pizza"/>
+        <rdfs:range rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaTopping"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#isAvailableAs -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#isAvailableAs">
+        <rdfs:comment>a particular type of food is available as a menu item at a restaurant.</rdfs:comment>
+        <rdfs:label>is available as</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#isBaseOf -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#isBaseOf">
+        <rdfs:domain rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaBase"/>
+        <rdfs:range rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Pizza"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#isIngredientOf -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#isIngredientOf">
+        <rdfs:comment>An individual ingredient is used in the making of a menu item.</rdfs:comment>
+        <rdfs:label>is ingredient of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#isLocatedAt -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#isLocatedAt">
+        <rdfs:domain rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaOutlet"/>
+        <rdfs:range rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#PostalAddress"/>
+        <rdfs:comment>A business is located at a single postal address.</rdfs:comment>
+        <rdfs:label>is located at</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#isToppingOf -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#isToppingOf">
+        <rdfs:subPropertyOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#isIngredientOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#locatedIn">
+        <rdfs:comment>one geographical area is located within another.</rdfs:comment>
+        <rdfs:label>located in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#servedAt -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#servedAt">
+        <rdfs:comment>is available to buy at a food outlet</rdfs:comment>
+        <rdfs:label>served at</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#stateContainsLocation -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#stateContainsLocation">
+        <rdfs:subPropertyOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#containsLocation"/>
+        <rdfs:domain rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#State"/>
+        <rdfs:range rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#stateLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#stateLocatedIn">
+        <rdfs:subPropertyOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#locatedIn"/>
+        <rdfs:label>state located in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#item_description -->
+
+    <owl:DatatypeProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#item_description">
+        <rdfs:domain rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#MenuItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>An unstructured textual description for a menu item.  Element of the description may be extracted into more structured classes and object property relationships, eg. ingredients, portion size.</rdfs:comment>
+        <rdfs:label>item description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#postcode -->
+
+    <owl:DatatypeProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#postcode">
+        <rdfs:domain rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A code usually assigned by the national postal service that will locate a geographical location within a small area.</rdfs:comment>
+        <rdfs:label>postcode</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#price -->
+
+    <owl:DatatypeProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#price">
+        <rdfs:domain rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#MenuItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The amount of money charge by a business for the purchase of an item.</rdfs:comment>
+        <rdfs:label>price</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#price_currency -->
+
+    <owl:DatatypeProperty rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#price_currency">
+        <rdfs:domain rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#MenuItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The national currency in which a price is given.</rdfs:comment>
+        <rdfs:label>price currency</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#AmericanPizza -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#AmericanPizza">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#NamedPizza"/>
+        <owl:disjointWith rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#BiancaPizza"/>
+        <owl:disjointWith rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#MargheritaPizza"/>
+        <rdfs:comment>An American pizza is defined as a pizza with pepperoni, mozzerella and tomato.</rdfs:comment>
+        <rdfs:label>American pizza</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#BiancaPizza -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#BiancaPizza">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#hasPizzaTopping"/>
+                        <owl:someValuesFrom rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Tomato"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#CheeseIngredient -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#CheeseIngredient">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#VegIngredient"/>
+        <rdfs:comment>an ingredient that contains cheese</rdfs:comment>
+        <rdfs:label>cheese ingredient</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#City -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#City">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#GeoArea"/>
+        <owl:disjointWith rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Country"/>
+        <owl:disjointWith rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#State"/>
+        <rdfs:comment>A populated place with administratively defined boundaries.</rdfs:comment>
+        <rdfs:label>city</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#Country -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#Country">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#GeoArea"/>
+        <owl:disjointWith rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#State"/>
+        <rdfs:comment>A distinct geographical area and political entity.</rdfs:comment>
+        <rdfs:label>country</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#FishIngredient -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#FishIngredient">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Ingredient"/>
+        <owl:disjointWith rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#MeatIngredient"/>
+        <owl:disjointWith rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#VegIngredient"/>
+        <rdfs:comment>An ingredient that contains fish or seafood.</rdfs:comment>
+        <rdfs:label>fish ingredient</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#Food -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#Food"/>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#GeoArea -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#GeoArea">
+        <owl:disjointWith rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#GeoLocation"/>
+        <rdfs:comment>A defined geograhical area, often for the purposes of administration or politics, eg. city, state.</rdfs:comment>
+        <rdfs:label>geographical area</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#GeoLocation -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#GeoLocation">
+        <rdfs:comment>A geographical spot location that could be identified by a latitude or longitude.</rdfs:comment>
+        <rdfs:label>location</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#Ingredient -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#Ingredient">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Food"/>
+        <owl:disjointWith rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Pizza"/>
+        <rdfs:comment>A single ingredient that may be used in a pizza, eg. onion.</rdfs:comment>
+        <rdfs:label>ingredient</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#MargheritaPizza -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#MargheritaPizza">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#hasPizzaTopping"/>
+                <owl:someValuesFrom rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Mozzerella"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#hasPizzaTopping"/>
+                <owl:someValuesFrom rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Tomato"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#hasPizzaTopping"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#Mozzerella"/>
+                            <rdf:Description rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#Tomato"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A Margherita pizza is defined as a pizza with only tomato and mozzerella topping.</rdfs:comment>
+        <rdfs:label>Margherita pizza</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#MeatIngredient -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#MeatIngredient">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Ingredient"/>
+        <owl:disjointWith rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#VegIngredient"/>
+        <rdfs:comment>An ingredient that contains meat or meat products.</rdfs:comment>
+        <rdfs:label>meat ingredient</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#MenuItem -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#MenuItem">
+        <rdfs:comment>An item for sale on a pizza menu at a particular food outlet, eg. Meat Lover Pizza, House Pizza.</rdfs:comment>
+        <rdfs:label>menu item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#Mozzerella -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#Mozzerella">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#cheese"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#NamedPizza -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#NamedPizza">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Pizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#hasPizzaTopping"/>
+                <owl:someValuesFrom rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>a pizza may be a particular named pizza.</rdfs:comment>
+        <rdfs:label>named pizza</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#OutletCategory -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#OutletCategory">
+        <rdfs:comment>A category of food outlet selling pizza, eg. Italian restaurant or bakery.</rdfs:comment>
+        <rdfs:label>outlet category</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#Pizza -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#Pizza">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Food"/>
+        <owl:disjointWith rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaBase"/>
+        <owl:disjointWith rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaTopping"/>
+        <rdfs:comment>A pizza available to buy at an outlet, ie. a combination of dough-based base and a combination of ingredient toppings.</rdfs:comment>
+        <rdfs:label>pizza</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaBase -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaBase">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Food"/>
+        <rdfs:comment>The base of a pizza onto which toppings are cooked, usually made from dough.</rdfs:comment>
+        <rdfs:label>pizza base</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaOutlet -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaOutlet">
+        <rdfs:comment>A business selling pizzas.  It may be a restaurant, take-away, bar etc.</rdfs:comment>
+        <rdfs:label>Pizza Outlet</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaTopping -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaTopping">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Ingredient"/>
+        <rdfs:comment>An ingredient used as topping on a pizza base for a pizza.</rdfs:comment>
+        <rdfs:label>pizza topping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#PostalAddress -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#PostalAddress">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#GeoLocation"/>
+        <rdfs:comment>A type of geographical location.  Usually identified by a combination of street name and number.</rdfs:comment>
+        <rdfs:label>postal address</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#State -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#State">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#GeoArea"/>
+        <rdfs:comment>A large bounded area, defined for administrative purposes.  States usually have law-making and tax-raising powers.</rdfs:comment>
+        <rdfs:label>state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#Tomato -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#Tomato">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#VegIngredient -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#VegIngredient">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#Ingredient"/>
+        <rdfs:comment>an ingredient that contains no meat or fish.</rdfs:comment>
+        <rdfs:label>vegetable ingredient</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#bacon -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#bacon">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#cheese -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#cheese">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http:/www.city.ac.uk/ds/inm713/judith_grieves#onion -->
+
+    <owl:Class rdf:about="http:/www.city.ac.uk/ds/inm713/judith_grieves#onion">
+        <rdfs:subClassOf rdf:resource="http:/www.city.ac.uk/ds/inm713/judith_grieves#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#versionInfo">
+        <rdfs:comment>First version v0.1</rdfs:comment>
+        <rdfs:label>v0.1</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

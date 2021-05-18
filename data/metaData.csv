@@ -1,0 +1,7 @@
+﻿column,classType,labelDatatype,dataProperty,attrColumn,attrType,objectProperty,objPropColumn
+country,Country,string,,,,,
+state,State,string,,,,stateLocatedIn,country
+city,City,string,,,,cityLocatedIn,state
+address,PostalAddress,string,postcode,postcode,string,addressLocatedIn,city
+name,PizzaOutlet,string,,,,isLocatedAt,address
+menu item,MenuItem,string,item_description:price:price_currency,item description:item value:currency,string:float:string,servedAt,name
