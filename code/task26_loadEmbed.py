@@ -72,5 +72,12 @@ def loadEmbeddings():
         
         print("finished loadEmbeddings ...")
         
+        
+def main():
 
-#loadEmbeddings()
+    loadEmbeddings()
+
+
+if __name__ == "__main__":
+
+    main()

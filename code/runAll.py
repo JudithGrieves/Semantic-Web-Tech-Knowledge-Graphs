@@ -9,25 +9,25 @@ INM713 - Semantic Web Technologies & Knowledge Graphs - module coursework
 Run all Python modules for the coursework.
 
 """
-import task23_csvToRDF as csvToRDF
-import task24_1_OWLReasoning as OWLRLReasoning
-import task24_2_SPARQLqueries as SPARQLqueries
-import task25_1_ontAlign as ontAlign
-import task25_2_Reasoning as alignInference
-import task26_loadEmbed as loadEmbeddings
+import task23_csvToRDF as rdf
+import task24_1_OWLReasoning as owl
+import task24_2_SPARQLqueries as sp
+import task25_1_ontAlign as oa
+import task25_2_Reasoning as rs
+import task26_loadEmbed as em
 
-def runAll(input_csv):
+def main(input_csv):
     
     print("Starting runAll() ...")
     
     # the initial CSV filename is supplied and drives all other modules
     
-    csvToRDF.csvToRDF(input_csv)
-    OWLRLReasoning.OWLRLReasoning()
-    SPARQLqueries.querySPARQL()    
-    ontAlign.ontAlign()    
-    alignInference.alignInference()
-    loadEmbeddings.loadEmbeddings()
+    #rdf.csvToRDF(input_csv)
+    owl.OWLRLReasoning()
+    sp.querySPARQL()    
+    oa.ontAlign()    
+    rs.alignInference()
+    em.loadEmbeddings()
 
     print("Finished runAll() ...")
   
@@ -35,6 +35,6 @@ def runAll(input_csv):
     
     
     
-inFile="pizza_data.csv"    # file to run all for
+inFile="pizza_data_200.csv"    # file to run all for
 
-runAll(inFile) 
+main(inFile) 

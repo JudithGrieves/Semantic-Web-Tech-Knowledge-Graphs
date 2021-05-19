@@ -97,5 +97,13 @@ def OWLRLReasoning():
     print("Finished OWLRLReasoning")
     
     
-#OWLRLReasoning()
+
+def main():
+    
+    OWLRLReasoning()
+
+
+if __name__ == "__main__":
+
+    main()
 

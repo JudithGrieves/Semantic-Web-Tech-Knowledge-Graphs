@@ -225,7 +225,15 @@ def querySPARQL():
     print("\nFinished querySPARQL")
           
 
-Display=False       
-#querySPARQL()
+Display=False  
+
+def main():
+    
+    querySPARQL()
+
+
+if __name__ == "__main__":
+
+    main()
 
 #

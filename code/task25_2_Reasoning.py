@@ -99,5 +99,13 @@ def alignInference():
     print("Finished alignInference")
     
     
-#alignInference()
+def main():
+
+    alignInference()
+
+
+if __name__ == "__main__":
+
+    main()
+
 

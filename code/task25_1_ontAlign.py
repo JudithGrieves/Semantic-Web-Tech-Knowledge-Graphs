@@ -276,6 +276,13 @@ def ontAlign():
     print("finished ontAlign ...")
 
 
+def main():
+
+    ontAlign()
+
 
 Display=False 
-#ontAlign()
+
+if __name__ == "__main__":
+
+    main()

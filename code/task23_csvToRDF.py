@@ -486,13 +486,17 @@ def csvToRDF(inFile="pizza_cutdown.csv"):
     print("Finished csvToRDF ....")
 
 
-
+def main():
+    
+    print("Running main()")
+    csvToRDF("pizza_data_200.csv")
 
 externalURI=True
 Display=False 
 
-# to run stand-alone
-#csvToRDF("pizza_cutdown.csv")
+if __name__ == "__main__":
+
+    main()
 
 
 
